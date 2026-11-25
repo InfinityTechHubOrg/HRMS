@@ -24,6 +24,7 @@ import { useDataRevision } from '../../hooks/useDataRevision'
 import { expiryStatus, fmtDate, fmtDateTime, aed, fmtTime } from '../../utils/dates'
 import { downloadEmployeeCardPdf, downloadPayslipPdf, downloadSalaryLetterPdf } from '../../utils/pdf'
 import { getPayslip } from '../../services/payroll'
+import { verificationBaseUrl } from '../../config/env'
 
 const TABS = ['Personal', 'Documents', 'Work Permits', 'Attendance', 'Leave', 'Payroll', 'Card']
 
@@ -199,7 +200,7 @@ export default function EmployeeProfile() {
     }
   }
 
-  const verifyUrl = `${window.location.origin}/verify/${emp.verifyToken}`
+  const verifyUrl = `${verificationBaseUrl()}/verify/${emp.verifyToken}`
 
   return (
     <div className="space-y-5">

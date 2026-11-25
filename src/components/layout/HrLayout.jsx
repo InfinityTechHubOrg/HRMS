@@ -13,6 +13,7 @@ import {
 import RoleSwitcher from './RoleSwitcher'
 import SettingsMenu from './SettingsMenu'
 import ToastViewport from '../ui/Toast'
+import { env } from '../../config/env'
 
 const nav = [
   { to: '/hr/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -36,7 +37,7 @@ export default function HrLayout() {
             C
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-900">Crewly</p>
+            <p className="text-sm font-semibold text-slate-900">{env.appName}</p>
             <p className="text-[11px] text-slate-500">HRMS</p>
           </div>
         </div>
@@ -68,7 +69,7 @@ export default function HrLayout() {
         <header className="no-print sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur lg:px-6">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{title}</p>
-            <p className="text-sm font-semibold text-slate-800 lg:hidden">Crewly</p>
+            <p className="text-sm font-semibold text-slate-800 lg:hidden">{env.appName}</p>
           </div>
           <div className="flex items-center gap-2">
             <RoleSwitcher />

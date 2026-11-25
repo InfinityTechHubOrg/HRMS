@@ -3,6 +3,7 @@ import { Home, Clock, CalendarDays, FileText, CreditCard, Wallet, Mail } from 'l
 import RoleSwitcher from './RoleSwitcher'
 import SettingsMenu from './SettingsMenu'
 import ToastViewport from '../ui/Toast'
+import { env } from '../../config/env'
 
 const tabs = [
   { to: '/employee/home', label: 'Home', icon: Home },
@@ -25,7 +26,7 @@ export default function EmployeeLayout() {
                 C
               </div>
               <div>
-                <p className="text-sm font-semibold leading-tight">Crewly</p>
+                <p className="text-sm font-semibold leading-tight">{env.appName}</p>
                 <p className="text-[10px] text-slate-400">Staff App</p>
               </div>
             </div>

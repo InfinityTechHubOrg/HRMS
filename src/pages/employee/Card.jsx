@@ -8,6 +8,7 @@ import { StatusBadge } from '../../components/ui/Badge'
 import { PageSkeleton } from '../../components/ui/Skeleton'
 import { fmtDate } from '../../utils/dates'
 import { downloadEmployeeCardPdf } from '../../utils/pdf'
+import { verificationBaseUrl } from '../../config/env'
 
 export default function EmployeeCard() {
   const employeeId = useSelector((s) => s.session.employeeId)
@@ -19,7 +20,7 @@ export default function EmployeeCard() {
 
   if (!emp) return <PageSkeleton />
 
-  const verifyUrl = `${window.location.origin}/verify/${emp.verifyToken}`
+  const verifyUrl = `${verificationBaseUrl()}/verify/${emp.verifyToken}`
 
   return (
     <div className="space-y-4">

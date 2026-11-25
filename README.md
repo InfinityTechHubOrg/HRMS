@@ -8,11 +8,22 @@
 ## Quick start
 
 ```bash
+cp .env.example .env
 npm install
 npm run dev
 ```
 
 Open the URL Vite prints (usually `http://localhost:5173`).
+
+Env vars (Vite `VITE_*`) live in `.env` — see `.env.example`. `.env` is gitignored; commit only `.env.example`.
+
+## GitHub Pages
+
+This repo deploys via **GitHub Actions** (`.github/workflows/deploy-pages.yml`) to  
+`https://infinitytechhuborg.github.io/HRMS/`.
+
+In **Settings → Pages**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).  
+Pushing to `main` builds Vite with `base: /HRMS/` and publishes `dist`.
 
 Use the **role switcher** in the top bar:
 

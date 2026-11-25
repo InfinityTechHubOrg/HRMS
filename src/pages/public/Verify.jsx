@@ -4,6 +4,7 @@ import { getEmployeeByToken } from '../../services/employees'
 import { StatusBadge } from '../../components/ui/Badge'
 import { PageSkeleton } from '../../components/ui/Skeleton'
 import { ShieldCheck } from 'lucide-react'
+import { env } from '../../config/env'
 
 export default function Verify() {
   const { token } = useParams()
@@ -27,7 +28,7 @@ export default function Verify() {
         <p className="text-lg font-semibold">Invalid card</p>
         <p className="mt-1 text-sm text-slate-500">This verification link is not recognized.</p>
         <Link to="/" className="mt-4 text-sm text-brand-600 hover:underline">
-          Back to Crewly
+          Back to {env.appName}
         </Link>
       </div>
     )
@@ -38,7 +39,7 @@ export default function Verify() {
       <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-200">
         <div className="mb-4 flex items-center gap-2 text-brand-700">
           <ShieldCheck className="h-5 w-5" />
-          <p className="text-sm font-semibold">Crewly · Card verification</p>
+          <p className="text-sm font-semibold">{env.appName} · Card verification</p>
         </div>
         <div className="flex gap-4">
           <img src={emp.photo} alt="" className="h-24 w-24 rounded-2xl object-cover ring-2 ring-slate-100" />
